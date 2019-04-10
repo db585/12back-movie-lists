@@ -72,26 +72,24 @@ if (process.env.NODE_ENV === 'production') {
   // Check process.env variable from .env
   // require('dotenv').config() // we use a command in package.json instead
   console.log('process.env.ML_SERVER_PORT ', process.env.ML_SERVER_PORT)
-  console.log('process.env.SERVER_PORT ', process.env.SERVER_PORT)
-  console.log('config.SERVER_PORT ', config.SERVER_PORT)
-  console.log('process.env.PORT ', process.env.PORT)
   console.log('process.env.NODE_ENV ', process.env.NODE_ENV)
   console.log('process.env.ML_CORS ', process.env.ML_CORS)
   console.log('process.env.ML_MONGO_URL ', process.env.ML_MONGO_DO_URI)
   console.log('process.env.ML_JWT_SECRET ', process.env.ML_JWT_SECRET)
 
-  // Set static folder
-  // console.log('express static', express.static('/../front/build'))
-  app.use(express.static('../front/build'))
+  // Commented: we need it for serving frontend
+  // // Set static folder
+  // // console.log('express static', express.static('/../front/build'))
+  // app.use(express.static('../front/build'))
 
-  app.get('*', (req, res) => {
-    // console.log('path resolve ', path.resolve(__dirname, '/../front/build', 'index.html'))
-    res.sendFile(path.resolve(__dirname, '../front/build', 'index.html'))
-  })
+  // app.get('*', (req, res) => {
+  //   // console.log('path resolve ', path.resolve(__dirname, '/../front/build', 'index.html'))
+  //   res.sendFile(path.resolve(__dirname, '../front/build', 'index.html'))
+  // })
 }
 
-const PORT = process.env.PORT || config.SERVER_PORT
+// const PORT = process.env.PORT || config.SERVER_PORT
 
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}...`)
+app.listen(config.SERVER_PORT, () => {
+  console.log(`listening on config.SERVER_PORT ${config.SERVER_PORT}...`)
 })
