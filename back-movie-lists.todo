@@ -1,2 +1,3 @@
 v1:
   ☐ Deploy as separate back on DO
+  ☐ Test from postman. NOTE: http://mng.movielists.ca:15021/api/tests, because *.movielists.ca pass through cloudflare CDN
