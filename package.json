@@ -8,7 +8,7 @@
     "server": "nodemon server.js",
     "pm2srv": "pm2 start server.js",
     "prod": "NODE_ENV=production node server.js",
-    "do-prod": "NODE_ENV=production node -r dotenv/config server.js"
+    "do-inst-run-prod": "NODE_ENV=production yarn install && node -r dotenv/config server.js"
   },
   "keywords": [
     "movie",
